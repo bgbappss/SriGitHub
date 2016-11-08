@@ -1,0 +1,33 @@
+	<ion-view view-title="Jokes" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-jokes" class=" page-jokes">
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<ion-list class="card list ">
+				<div class="item item-input">
+					<i class="icon ion-search placeholder-icon"></i>
+					<input type="search" ng-model="q" placeholder="Search" aria-label="filter jokess" />
+				</div>
+			</ion-list>
+
+			<div class="card list light-bg animate-fade-slide-in-right">
+				<a class="item item-icon-left ink-energized-900 item-icon-right "  ng-repeat="item in jokess | filter:q as results" ng-init="$last ? fireEvent() : null" ng-href="#/telugu_jokes/jokes_singles/{{item.id}}" >
+					<i class="icon energized-900 ion-android-contacts"></i>
+					<span ng-bind-html="item.title.rendered | to_trusted"></span>
+					<div ng-bind-html="item.content.rendered | to_trusted"></div>
+					<i class="icon ion-arrow-right-c"></i>
+				</a>
+			</div>
+
+			<ion-list ng-if="results.length == 0" class="list card">
+				<div class="item"  >
+					<p>No results found...!</p>
+				</div>
+			</ion-list>
+			<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="onInfinite()" distance="5px" ng-if="hasMoreData"></ion-infinite-scroll>
+
+
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>
