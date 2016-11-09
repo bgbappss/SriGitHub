@@ -1,7 +1,8 @@
 	<ion-view view-title="Jokes" hide-nav-bar="false" >
 		<!-- content -->
 		<ion-content delegate-handle="top"   id="page-jokes" class=" page-jokes">
-					<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
 			<ion-list class="card list ">
 				<div class="item item-input">
 					<i class="icon ion-search placeholder-icon"></i>
@@ -11,7 +12,7 @@
 
 			<div class="card list light-bg animate-fade-slide-in-right">
 				<a class="item item-icon-left ink-calm item-icon-right "  ng-repeat="item in jokess | filter:q as results" ng-init="$last ? fireEvent() : null" ng-href="#/telugu_jokes/jokes_singles/{{item.id}}" >
-					<i class="icon calm ion-android-contacts"></i>
+					<i class="icon calm ion-happy"></i>
 					<span ng-bind-html="item.title.rendered | to_trusted"></span>
 					<i class="icon ion-arrow-right-c"></i>
 				</a>
