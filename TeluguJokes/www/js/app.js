@@ -94,32 +94,6 @@ angular.module("telugu_jokes", ["ngCordova","ionic","ionMdInput","ionic-material
 		}
 	})
 
-	.state("telugu_jokes.feedback", {
-		url: "/feedback",
-		views: {
-			"telugu_jokes-side_menus" : {
-						templateUrl:"templates/telugu_jokes-feedback.html",
-						controller: "feedbackCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
-	.state("telugu_jokes.form_feedback", {
-		url: "/form_feedback",
-		views: {
-			"telugu_jokes-side_menus" : {
-						templateUrl:"templates/telugu_jokes-form_feedback.html",
-						controller: "form_feedbackCtrl"
-					},
-			"fabButtonUp" : {
-						template: '',
-					},
-		}
-	})
-
 	.state("telugu_jokes.jokes", {
 		url: "/jokes",
 		cache:false,

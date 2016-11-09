@@ -13,17 +13,17 @@
 				</div>
 			<div class="list card">
 					<div class="item"  ng-bind-html="quotes.title.rendered | to_trusted">{{quotes.title.rendered}}</div>
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="quotes.content.rendered | strHTML"></div>
 					<div class="item">
-					<p>Description</p>
+					<p>Share</p>
 					<div class="button-bar">
-						<button class="button button-small button-assertive icon ion-social-googleplus" ng-click="openURL('https://plus.google.com/share?url=' + quotes.content.rendered)"></button>
-						<button class="button button-small button-positive icon ion-social-facebook" ng-click="openURL('https://facebook.com/sharer/sharer.php?u=' + quotes.content.rendered)"></button>
-						<button class="button button-small button-calm icon ion-social-twitter" ng-click="openURL('https://twitter.com/share?url=' + quotes.content.rendered)"></button>
-						<button class="button button-small button-assertive-900 icon ion-social-pinterest" ng-click="openURL('https://pinterest.com/pin/create/bookmarklet/?&url=' + quotes.content.rendered)"></button>
-						<button class="button button-small button-positive-900 icon ion-social-linkedin" ng-click="openURL('https://www.linkedin.com/shareArticle?url=' + quotes.content.rendered)"></button>
+						<button class="button button-small button-assertive icon ion-social-googleplus" ng-click="openURL('https://plus.google.com/share?url=' + quotes.link)"></button>
+						<button class="button button-small button-positive icon ion-social-facebook" ng-click="openURL('https://facebook.com/sharer/sharer.php?u=' + quotes.link)"></button>
+						<button class="button button-small button-calm icon ion-social-twitter" ng-click="openURL('https://twitter.com/share?url=' + quotes.link)"></button>
+						<button class="button button-small button-assertive-900 icon ion-social-pinterest" ng-click="openURL('https://pinterest.com/pin/create/bookmarklet/?&url=' + quotes.link)"></button>
+						<button class="button button-small button-positive-900 icon ion-social-linkedin" ng-click="openURL('https://www.linkedin.com/shareArticle?url=' + quotes.link)"></button>
 					</div>
 					</div>
-					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="quotes.link | strHTML"></div>
 			</div>
 
 		</ion-content>

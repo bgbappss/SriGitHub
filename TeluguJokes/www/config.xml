@@ -67,6 +67,7 @@
 	<plugin name="cordova-plugin-statusbar" />
 	<plugin name="ionic-plugin-keyboard" />
 	<!-- ./default -->
+	<plugin name="cordova-plugin-admobpro" />
 	<plugin name="cordova-plugin-inappbrowser" />
 	<platform name="android">
 		<plugin name="cordova-plugin-velda-devicefeedback" />
