@@ -1,0 +1,16 @@
+	<ion-view view-title="Question" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-form_question" class="has-header page-form_question">
+		
+		<div class="list list"  >
+			<form ng-submit="submitQuestion()">
+			<ion-md-input ng-model="form_question.question" name="question" placeholder="Question" highlight-color="energized" type="text"></ion-md-input>
+			<div class="item item-button">
+				<button class="button button-full button-assertive ink">Submit</button>
+			</div>
+			</form>
+		</div>
+		<br/><br/><br/><br/>
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

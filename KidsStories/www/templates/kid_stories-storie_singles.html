@@ -1,0 +1,23 @@
+	<ion-view view-title="{{ storie.title }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-storie_singles" class="page-storie_singles">
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="tabs tabs-colorful tabs-icon-top static">
+				<a ng-click="$ionicGoBack()" class="tab-item">
+					<i class="icon ion-ios-albums-outline"></i> List
+				</a>
+				<a  class="tab-item tab-item-active active">
+					<i class="icon ion-ios-list-outline"></i> Detail
+				</a>
+				</div>
+			<div class="list ">
+					<div class="padding" >Author: {{storie.author}}</div>
+					<div class="item"  ng-bind-html="storie.title | to_trusted">{{storie.title}}</div>
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="storie.content | to_trusted"></div>
+					<div class="padding" >category{{storie.category}}</div>
+			</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

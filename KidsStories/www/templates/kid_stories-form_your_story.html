@@ -1,0 +1,25 @@
+	<ion-view view-title="Your Story" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-form_your_story" class="has-header page-form_your_story">
+		
+		<div class="list list"  >
+			<form ng-submit="submitYour_story()">
+			<ion-md-input ng-model="form_your_story.author" name="author" placeholder="Author" highlight-color="energized" type="text"></ion-md-input>
+			<ion-md-input ng-model="form_your_story.title" name="title" placeholder="Title" highlight-color="energized" type="text"></ion-md-input>
+			<ion-md-input ng-model="form_your_story.content" name="content" placeholder="Content" highlight-color="energized" type="text"></ion-md-input>
+			<label class="item item-input item-select">
+				<span class="input-label">Category</span>
+				<select ng-model="form_your_story.category" name="category" >
+				<option value="fabel">fabel</option>
+				<option value="cerita rakyat">cerita rakyat</option>
+				</select>
+			</label>
+			<div class="item item-button">
+				<button class="button button-full button-assertive ink">Submit</button>
+			</div>
+			</form>
+		</div>
+		<br/><br/><br/><br/>
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

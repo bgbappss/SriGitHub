@@ -1,0 +1,42 @@
+	<ion-view view-title="Faqs" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-faqs" class="has-header page-faqs">
+		
+			<ion-refresher pulling-text="Segarkan"  on-refresh="doRefresh()"></ion-refresher>
+			<ion-list class="card list">
+				<div class="item item-input">
+					<i class="icon ion-search placeholder-icon"></i>
+					<input type="search" ng-model="q" placeholder="Cari" aria-label="filter faqs" />
+				</div>
+			</ion-list>
+
+			<div class="list card animate-fade-slide-in-right">
+				<a class="item item-icon-left"  ng-repeat="item in faqs | filter:q as results" ng-init="$last ? fireEvent() : null" ng-href="#/kid_stories/faq_singles/{{item.id}}" >
+					<i class="icon assertive-900 ion-ios-help-outline"></i>
+					<span ng-bind-html="item.question | to_trusted"></span>
+						<p >
+						<span class="calm-900">{{item.answer}}</span>
+						</p>
+				</a>
+			</div>
+			<ion-list class="list">
+				<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="onInfinite()" distance="5px" ng-if="hasMoreData"></ion-infinite-scroll>
+			</ion-list>
+
+			<ion-list class="list">
+				<div class="item" ng-if="results.length == 0" >
+					<p>Tidak ditemukan</p>
+				</div>
+			</ion-list>
+
+
+<!--
+print all variable
+<pre>
+{{ data_faqs | json }}
+</pre>
+-->
+                
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

@@ -1,0 +1,17 @@
+	<ion-view view-title="Contact Us" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-form_contact_us" class="has-header page-form_contact_us">
+		
+		<div class="list list"  >
+			<form ng-submit="submitContact_us()">
+			<ion-md-input ng-model="form_contact_us.subject" name="subject" placeholder="Subject" highlight-color="energized" type="text"></ion-md-input>
+			<ion-md-input ng-model="form_contact_us.message" name="message" placeholder="Message" highlight-color="energized" type="text"></ion-md-input>
+			<div class="item item-button">
+				<button class="button button-full button-assertive ink">Submit</button>
+			</div>
+			</form>
+		</div>
+		<br/><br/><br/><br/>
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

@@ -1,0 +1,45 @@
+	<ion-view view-title="Categories" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-categories" class="has-header page-categories">
+		
+			<ion-refresher pulling-text="Segarkan"  on-refresh="doRefresh()"></ion-refresher>
+			<ion-list class="card list">
+				<div class="item item-input">
+					<i class="icon ion-search placeholder-icon"></i>
+					<input type="search" ng-model="q" placeholder="Search" aria-label="filter categories" />
+				</div>
+			</ion-list>
+
+			<div class="list animate-fade-slide-in-right">
+				<div class="list card" ng-repeat="item in categories | filter:q as results" ng-init="$last ? fireEvent() : null" href="#/kid_stories/stories/{{item.id}}" >
+					<div class="item item-colorful"  ng-bind-html="item.name | to_trusted"></div>
+					<div class="item item-thumbnail-left item-text-wrap">
+						<img alt="" class="full-image" ng-src="{{item.cover}}" />
+						<p >
+						{{item.description}}
+						</p>
+				</div>
+					<a class="item button button-clear colorful ink" href="#/kid_stories/stories/{{item.id}}">More</a>
+				</div>
+			</div>
+			<ion-list class="list">
+			<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="onInfinite()" distance="5px" ng-if="hasMoreData"></ion-infinite-scroll>
+			</ion-list>
+
+			<ion-list class="list">
+				<div class="item" ng-if="results.length == 0" >
+					<p>Tidak ditemukan</p>
+				</div>
+			</ion-list>
+
+
+<!--
+print all variable
+<pre>
+{{ data_categories | json }}
+</pre>
+-->
+                
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>
